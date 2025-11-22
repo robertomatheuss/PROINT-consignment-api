@@ -7,6 +7,31 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Docker passo a passo: 
+
+# 1-📁 Clonar o projeto
+
+# 2- Clonar o .env:
+
+cp .env.example .env
+
+# 3- Subir o container com o docker:
+
+docker compose up --build
+
+# 4- Gerar API_KEY do laravel:
+
+docker compose exec app php artisan key:generate
+
+# 5- Gerar seeders:
+
+docker compose exec app php artisan migrate --seed
+
+# 6- Criar link do storage publico:
+
+docker compose exec app php artisan storage:link
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

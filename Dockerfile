@@ -1,4 +1,4 @@
-FROM php:8.2-cli
+FROM php:8.2-fpm
 
 # Instala dependências de sistema
 RUN apt-get update && apt-get install -y \
@@ -20,7 +20,6 @@ RUN composer install --no-interaction --prefer-dist
 RUN mkdir -p storage bootstrap/cache \
     && chmod -R 777 storage bootstrap/cache
 
-EXPOSE 8000
+EXPOSE 9000
 
-# Comando padrão: sobe o servidor embutido do Laravel
-CMD php artisan serve --host=0.0.0.0 --port=8000
+CMD ["php-fpm"]

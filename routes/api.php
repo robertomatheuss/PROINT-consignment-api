@@ -24,9 +24,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::apiResource('vendas', VendaController::class)->except(['create', 'edit']);
 
-    Route::get('vendas/{venda}/documentos', [VendaDocumentoController::class, 'index']);
-    Route::post('vendas/{venda}/documentos', [VendaDocumentoController::class, 'store']);
-    Route::delete('vendas/{venda}/documentos/{documento}', [VendaDocumentoController::class, 'destroy']);
+    // Route::get('vendas/{venda}/documentos', [VendaDocumentoController::class, 'index']);
+    // Route::post('vendas/{venda}/documentos', [VendaDocumentoController::class, 'store']);
+    // Route::delete('vendas/{venda}/documentos/{documento}', [VendaDocumentoController::class, 'destroy']);
 
 
     Route::apiResource('clientes', ClienteController::class)->except(['create', 'edit']);
